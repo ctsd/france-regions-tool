@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="FranceRegionsToolApp">
+
+	<head>
+	    <meta charset="utf-8" />
+
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	    <title>France Regions Tool</title>
+
+	    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	    <link rel="stylesheet" href="dist/css/main.css">
+
+			<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	</head>
+
+	<body ng-controller="MainCtrl">
+
+		<div class="wrapper">
+			<form ng-submit="submit()">
+				<input type="text" ng-model="zipcode" placeholder="75000">
+			</form>
+
+			<div ng-show="zipinfo" class="zipinfo">
+				<span class="title">Département</span><br>
+				{{ dpt.name }}
+				<br>
+				<span class="title">Ancienne région</span><br>
+				{{ getRegion(dpt).name }}
+				{{ dpt.name }}
+				<br>
+				<span class="title">Nouvelle région</span><br>
+				{{ getNewRegion(dpt).name }}
+			</div>
+		</div>
+
+	</body>
+
+	<script src="dist/js/resources.js"></script>
+	<script src="dist/js/main.js"></script>
+
+</html>

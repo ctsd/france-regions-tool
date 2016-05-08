@@ -1,0 +1,95 @@
+.borderRadius(@radius: 3px) {
+    border-radius: @radius;
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+}
+
+.borderRadiusCustom (@topleft: 5px, @topright: 5px, @bottomleft: 5px, @bottomright: 5px) {
+	-webkit-border-radius: @topleft @topright @bottomright @bottomleft;
+	-moz-border-radius: @topleft @topright @bottomright @bottomleft;
+	border-radius: @topleft @topright @bottomright @bottomleft;
+}
+
+.boxShadowBlack (@x: 0px, @y: 3px, @blur: 5px, @size:1px, @alpha: 0.5) {
+	-webkit-box-shadow: @x @y @blur @size rgba(0, 0, 0, @alpha);
+	-moz-box-shadow: @x @y @blur @size rgba(0, 0, 0, @alpha);
+	box-shadow: @x @y @blur @size rgba(0, 0, 0, @alpha);
+}
+
+.boxInnerShadowBlack (@x: 0px, @y: 3px, @blur: 5px, @size:1px, @alpha: 0.5) {
+	-webkit-box-shadow: inset @x @y @blur @size rgba(0, 0, 0, @alpha);
+	-moz-box-shadow: inset @x @y @blur @size rgba(0, 0, 0, @alpha);
+	box-shadow: inset @x @y @blur @size rgba(0, 0, 0, @alpha);
+}
+
+
+.transition (@prop: all, @time: 1s, @ease: linear) {
+	-webkit-transition: @prop @time @ease;
+	-moz-transition: @prop @time @ease;
+	-o-transition: @prop @time @ease;
+	-ms-transition: @prop @time @ease;
+	transition: @prop @time @ease;
+}
+
+.transform (@rotate: 90deg, @scale: 1, @skew: 0deg, @translate: 0px) {
+	-webkit-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+	-moz-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+	-o-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+	-ms-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+	transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+}
+
+.gradient (@origin: top, @start: #ffffff, @stop: #000000) {
+	background-color: @start;
+	background-image: -webkit-linear-gradient(@origin, @start, @stop);
+	background-image: -moz-linear-gradient(@origin, @start, @stop);
+	background-image: -o-linear-gradient(@origin, @start, @stop);
+	background-image: -ms-linear-gradient(@origin, @start, @stop);
+	background-image: linear-gradient(@origin, @start, @stop);
+}
+
+.gradientOnColor (@origin: top, @alpha: 0.2) {
+	background-image: -webkit-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+	background-image: -moz-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+	background-image: -o-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+	background-image: -ms-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+	background-image: linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+}
+
+.gradientComplex (@origin: left, @direction: "to left", @start: #ffffff, @stop: #000000, @percentStart: 0%, @percentEnd: 100%) {
+    background-color: @start; /* Old browsers */
+    background: -moz-linear-gradient(@origin,  #ffffff 0%, #f8f8f8 46%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffffff), color-stop(46%,#f8f8f8)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(@origin,  #ffffff 0%,#f8f8f8 46%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(@origin,  #ffffff 0%,#f8f8f8 46%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(@origin,  #ffffff 0%,#f8f8f8 46%); /* IE10+ */
+    background: linear-gradient(to right,  #ffffff 0%,#f8f8f8 46%); /* W3C */
+
+}
+
+.centerMargin (){
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.resetList () {
+    list-style: none;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+}
+
+.animation (@fct, @time: 1s) {
+	animation: @fct @time;
+-webkit-animation: @fct @time;
+}
+
+.vcenter () {
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+}
